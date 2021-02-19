@@ -1,0 +1,1 @@
+<view class="content"><mc-navbar vue-id="f8c7e56e-1" bind:__l="__l"></mc-navbar><mc-tab vue-id="f8c7e56e-2" list="{{scroll_item}}" bind:__l="__l"></mc-tab></view>

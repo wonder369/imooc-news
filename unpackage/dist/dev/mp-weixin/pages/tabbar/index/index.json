@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "mc-navbar": "/components/mc-navbar/mc-navbar",
+    "mc-tab": "/components/mc-tab/mc-tab"
+  }
+}

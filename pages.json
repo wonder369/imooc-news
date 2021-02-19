@@ -1,0 +1,68 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	    {
+            "path" : "pages/tabbar/index/index",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+                "enablePullDownRefresh": false,
+				"navigationBarTextStyle":"white"
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabbar/my/my",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+                /* "navigationStyle":"custom" 局部去掉原生导航 */
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabbar/follow/follow",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "慕课网",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"h5":{"titleNView": false} /* 在h5端去掉自带的顶部导航栏*/
+		/* "navigationStyle":"custom"/* 全局去掉原生导航栏 */ 
+	},
+	"tabBar":{
+		"list":[
+			{
+				"text":"首页",
+				"pagePath":"pages/tabbar/index/index",
+				"iconPath":"static/home.png",
+				"selectedIconPath":"static/home-active.png"
+			},{
+				"text":"关注",
+				"iconPath":"static/follow.png",
+				"selectedIconPath":"static/follow-active.png",
+				"pagePath":"pages/tabbar/follow/follow"
+			},{
+				"text":"我的",
+				"iconPath":"static/my.png",
+				"selectedIconPath":"static/my-active.png",
+				"pagePath":"pages/tabbar/my/my"
+			}
+		],
+		"color":"#666",
+		"iconWidth":"32px",
+		"height":"65px",
+		"selectedColor":"#f07373",
+		"backgroundColor":"#fff"
+	},
+	"easycom":{
+		"uni-(.*)":"@/components/mc-$1/mc-$1.vue"
+	}
+}

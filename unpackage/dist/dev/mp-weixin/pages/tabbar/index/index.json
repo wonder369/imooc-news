@@ -4,6 +4,8 @@
   "navigationBarTextStyle": "white",
   "usingComponents": {
     "mc-navbar": "/components/mc-navbar/mc-navbar",
-    "mc-tab": "/components/mc-tab/mc-tab"
+    "mc-tab": "/components/mc-tab/mc-tab",
+    "mc-scroll": "/components/mc-scroll/mc-scroll",
+    "mc-list-card": "/components/mc-listCard/mc-listCard"
   }
 }

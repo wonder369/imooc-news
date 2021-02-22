@@ -38,5 +38,6 @@
     "selectedColor": "#f07373",
     "backgroundColor": "#fff"
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap45.json"
 }

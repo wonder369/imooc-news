@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mc-icons": "/components/mc-icons/mc-icons"
+  },
+  "component": true
+}

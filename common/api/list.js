@@ -19,4 +19,10 @@ function $http(options){
 		data
 	})
 }
+export const get_list=data=>{
+	return $http({
+		url:'get_list',
+		data
+	})
+}
 /* export const get_list=$http(url) */

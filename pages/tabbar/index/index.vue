@@ -1,10 +1,10 @@
 <template>
 	<view class="home">
 		<mc-navbar></mc-navbar>
-		<mc-tab :list="scroll_item"></mc-tab>
-		<mc-scroll>
-			<mc-listCard v-for="item in 5" mode="more"></mc-listCard>
-		</mc-scroll>
+		<mc-tab :list="scroll_item" :tab_index="tabIndex" @tabClick="tabClick()"></mc-tab>
+		<view class="home-swiper">
+			<mc-swiper :tabItem="scroll_item" :swiperIndex="swiperIndex" @change="change()"></mc-swiper>
+		</view>
 	</view>
 </template>
 
@@ -13,14 +13,24 @@
 		data() {
 			return {
 				scroll_item:[],
-				modeType:''
+				tabIndex:0,
+				swiperIndex:0
 			}
 		},
 		methods: {
 			get_label(){
 				this.$api.get_label().then(res=>{
-					this.scroll_item=res.data
+					const {data}=res
+					data.unshift({name:'全部'})
+					this.scroll_item=data
 				})
+			},
+			change(current){
+				this.tabIndex=current
+				this.swiperIndex=current
+			},
+			tabClick(index){
+				this.swiperIndex=index
 			}
 		},
 		onLoad() {
@@ -38,5 +48,10 @@
 		flex-direction: column;
 		height: 100%;
 		width: 100%;
+		.home-swiper{
+			flex: 1;
+			overflow: hidden;
+			
+		}
 	}
 </style>

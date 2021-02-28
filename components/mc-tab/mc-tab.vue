@@ -22,6 +22,16 @@
 				default(){
 					return []
 				}
+			},
+			tab_index:{
+				type:Number,
+				default:0
+			}
+		},
+		watch:{//监听props和data值的变化
+			tab_index(newval){
+				this.tabIndex=newval
+				console.log(newval)
 			}
 		},
 		data() {
@@ -32,6 +42,8 @@
 		methods:{
 			clickTab(item,index){
 				this.tabIndex=index
+				console.log(item)
+				this.$emit('tabClick',index)
 			}
 		}
 	}

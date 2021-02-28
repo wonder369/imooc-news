@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mc-scroll": "/components/mc-scroll/mc-scroll",
+    "mc-list-card": "/components/mc-listCard/mc-listCard"
+  },
+  "component": true
+}

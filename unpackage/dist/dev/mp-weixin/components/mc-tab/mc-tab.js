@@ -80,7 +80,7 @@ var components
 try {
   components = {
     mcIcons: function() {
-      return Promise.all(/*! import() | components/mc-icons/mc-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/mc-icons/mc-icons")]).then(__webpack_require__.bind(null, /*! @/components/mc-icons/mc-icons.vue */ 60))
+      return Promise.all(/*! import() | components/mc-icons/mc-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/mc-icons/mc-icons")]).then(__webpack_require__.bind(null, /*! @/components/mc-icons/mc-icons.vue */ 58))
     }
   }
 } catch (e) {
@@ -160,8 +160,18 @@ var _default2 =
       type: Array,
       default: function _default() {
         return [];
-      } } },
+      } },
 
+    tab_index: {
+      type: Number,
+      default: 0 } },
+
+
+  watch: { //监听props和data值的变化
+    tab_index: function tab_index(newval) {
+      this.tabIndex = newval;
+      console.log(newval);
+    } },
 
   data: function data() {
     return {
@@ -171,6 +181,8 @@ var _default2 =
   methods: {
     clickTab: function clickTab(item, index) {
       this.tabIndex = index;
+      console.log(item);
+      this.$emit('tabClick', index);
     } } };exports.default = _default2;
 
 /***/ }),

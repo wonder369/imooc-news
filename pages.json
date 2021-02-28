@@ -61,8 +61,8 @@
 		"height":"65px",
 		"selectedColor":"#f07373",
 		"backgroundColor":"#fff"
-	},
-	"easycom":{
-		"uni-(.*)":"@/components/mc-$1/mc-$1.vue"
 	}
+	/* "easycom":{
+		"uni-(.*)":"@/components/mc-$1/mc-$1.vue"
+	} */
 }

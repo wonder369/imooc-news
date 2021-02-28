@@ -80,7 +80,7 @@ var components
 try {
   components = {
     mcIcons: function() {
-      return Promise.all(/*! import() | components/mc-icons/mc-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/mc-icons/mc-icons")]).then(__webpack_require__.bind(null, /*! @/components/mc-icons/mc-icons.vue */ 60))
+      return Promise.all(/*! import() | components/mc-icons/mc-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/mc-icons/mc-icons")]).then(__webpack_require__.bind(null, /*! @/components/mc-icons/mc-icons.vue */ 58))
     }
   }
 } catch (e) {

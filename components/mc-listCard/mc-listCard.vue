@@ -1,46 +1,46 @@
 <template>
 	<view>
-		<view class="list-card" v-if="mode===''">
+		<view class="list-card" v-if="item.mode==='base'">
 			<view class="list-image">
-				<image src="../../static/logo.png" mode="aspectFit"></image>
+				<image :src="item.cover[0]" mode="aspectFit"></image>
 			</view>
 			<view class="list-content">
 				<view class="content-title">
-					<text>对方未付未付未付欺负我全服务器服务器服务器服务器吴青峰吴青峰吴青峰吴青峰吴青峰气味</text>
+					<text>{{item.title}}</text>
 				</view>
 				<view class="content-info">
-					<view class="info-type">前端</view>
-					<view class="info-wacth_times">120浏览</view>
+					<view class="info-type">{{item.classify}}</view>
+					<view class="info-wacth_times">{{item.browse_count}}次浏览</view>
 				</view>
 			</view>
 	   </view>
-	   <view class="list-card more-mode" v-if="mode==='more'">
+	   <view class="list-card more-mode" v-if="item.mode==='column'">
 			<view class="list-content">
 				<view class="content-title">
-					<text>对方未付未付未付欺负我全服务器服务器服务器服务器吴青峰吴青峰吴青峰吴青峰吴青峰气味</text>
+					<text>{{item.title}}</text>
 				</view>
 				<view class="content-image">
-					<view class="image-box" v-for="item in 3">
-						<image src="../../static/logo.png" mode="aspectFit"></image>
+					<view v-if="index<3" class="image-box" v-for="(item,index) in 3" :key="index">
+						<image :src="item.cover[index]" mode="aspectFill"></image>
 					</view>
 				</view>
 				<view class="content-info">
-					<view class="info-type">前端</view>
-					<view class="info-wacth_times">120浏览</view>
+					<view class="info-type">{{item.classify}}</view>
+					<view class="info-wacth_times">{{item.browse_count}}次浏览</view>
 				</view>
 			</view>
 		</view>
-		<view class="list-card big-mode" v-if="mode==='big'">
+		<view class="list-card big-mode" v-if="item.mode==='image'">
 			<view class="list-image">
-				<image src="../../static/logo.png" mode=""></image>
+				<image :src="item.cover[0]" mode="scaleToFill"></image>
 			</view>
 			<view class="list-content">
 				<view class="content-title">
-					<text>对方未付未付未付欺负我全服务器服务器服务器服务器吴青峰吴青峰吴青峰吴青峰吴青峰气味</text>
+					<text>{{item.title}}</text>
 				</view>
 				<view class="content-info">
-					<view class="info-type">前端</view>
-					<view class="info-wacth_times">120浏览</view>
+					<view class="info-type">{{item.classify}}</view>
+					<view class="info-wacth_times">{{item.browse_count}}次浏览</view>
 				</view>
 		   </view>
 		</view>
@@ -50,9 +50,9 @@
 <script>
 	export default {
 		props:{
-			mode:{
-				type:String,
-				default:""
+			item:{
+				type:Object,
+				default:{}
 			}
 		},
 		data() {

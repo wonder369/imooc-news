@@ -101,11 +101,8 @@ try {
     mcTab: function() {
       return __webpack_require__.e(/*! import() | components/mc-tab/mc-tab */ "components/mc-tab/mc-tab").then(__webpack_require__.bind(null, /*! @/components/mc-tab/mc-tab.vue */ 46))
     },
-    mcScroll: function() {
-      return __webpack_require__.e(/*! import() | components/mc-scroll/mc-scroll */ "components/mc-scroll/mc-scroll").then(__webpack_require__.bind(null, /*! @/components/mc-scroll/mc-scroll.vue */ 53))
-    },
-    mcListCard: function() {
-      return __webpack_require__.e(/*! import() | components/mc-listCard/mc-listCard */ "components/mc-listCard/mc-listCard").then(__webpack_require__.bind(null, /*! @/components/mc-listCard/mc-listCard.vue */ 74))
+    mcSwiper: function() {
+      return __webpack_require__.e(/*! import() | components/mc-swiper/mc-swiper */ "components/mc-swiper/mc-swiper").then(__webpack_require__.bind(null, /*! @/components/mc-swiper/mc-swiper.vue */ 53))
     }
   }
 } catch (e) {
@@ -177,14 +174,24 @@ var _default =
   data: function data() {
     return {
       scroll_item: [],
-      modeType: '' };
+      tabIndex: 0,
+      swiperIndex: 0 };
 
   },
   methods: {
     get_label: function get_label() {var _this = this;
-      this.$api.get_label().then(function (res) {
-        _this.scroll_item = res.data;
+      this.$api.get_label().then(function (res) {var
+        data = res.data;
+        data.unshift({ name: '全部' });
+        _this.scroll_item = data;
       });
+    },
+    change: function change(current) {
+      this.tabIndex = current;
+      this.swiperIndex = current;
+    },
+    tabClick: function tabClick(index) {
+      this.swiperIndex = index;
     } },
 
   onLoad: function onLoad() {
